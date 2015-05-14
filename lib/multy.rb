@@ -8,7 +8,7 @@ module Multy
     def_double_disptch(name)
     type_name = join_type(*types)
 
-    _methods[name] = {} if _methods[name].nil?
+    _methods[name] ||= {}
     _methods[name][type_name] = block
   end
 
