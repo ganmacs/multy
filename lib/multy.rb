@@ -20,6 +20,7 @@ module Multy
         raise "Not found #{name} method and argument " if meths["#{name}"][kls_name].nil?
         meths["#{name}"][kls_name].call(*args)
       end
+      alias_method :#{name[1..-1]}, :#{name}
     EOS
   end
 
